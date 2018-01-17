@@ -38,9 +38,7 @@ public class eleccions {
         System.out.println("En total han hagut " + votstsTotals + " vots entre tots els partits");
 
         ArrayList<String> nomsPartitsRepresentacio = new ArrayList<>();
-        ArrayList<Integer> votsPartitsRepresentacio = new ArrayList<>();
-        int[] esconsPartits;
-
+        ArrayList<Integer> votsPartitsRepresentacio = new ArrayList<>()
 
 
         // Descartar partits polítics sense posibilitat de representació
@@ -59,7 +57,7 @@ public class eleccions {
 
 
         // Assignar escons
-        esconsPartits = assignarEscons(numEscons, votsPartitsRepresentacio);
+        int esconsPartits[] = assignarEscons(numEscons, votsPartitsRepresentacio);
 
         System.out.println("RESULTAT DE LES VOTACIONS");
         for (int i = 0; i < esconsPartits.length; i++) {
@@ -90,9 +88,9 @@ public class eleccions {
         int [] votsPartitsHondt = new int[votsPartitsRepresentacio.size()];
         for (int i = 0; i < numEscons; i++) {
             for (int j = 0; j < votsPartitsHondt.length; j++) {
-                vots = (int)votsPartitsRepresentacio.get(i);
-                div = divisor[i];
-                votsPartitsHondt[i] = (vots/div);
+                vots = (int)votsPartitsRepresentacio.get(j);
+                div = divisor[j];
+                votsPartitsHondt[j] = (vots/div);
             }
             posicio = posicioMaxVots(votsPartitsHondt);
 
